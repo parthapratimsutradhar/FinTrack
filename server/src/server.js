@@ -1,12 +1,10 @@
-const express = require("express");
+import dotenv from "dotenv";
+import app from "./app.js";
 
-const app = express();
+dotenv.config();
 
-app.get("/", (req, res) => {
-  res.send("FinTrack API running...");
-});
+const PORT = process.env.PORT || 5000;
 
-const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
